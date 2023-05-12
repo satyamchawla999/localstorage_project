@@ -12,16 +12,15 @@ class App extends React.Component {
     store.subscribe(()=> {
       this.forceUpdate();
     })
-
     store.dispatch(addMovies(data))
     console.log('STATE',this.props.store.getState());
   }
 
   isMovieFavourite = (movie)=> {
 
-    const {favourities} = this.props.store.getState();
+    const {movies} = this.props.store.getState();
 
-    const index = favourities.indexOf(movie);
+    const index = movies.favourities.indexOf(movie);
 
     if(index !== -1) {
       return true;
@@ -37,7 +36,9 @@ class App extends React.Component {
 
   render() {
     console.log(this.props.store.getState())
-    const {list,favourities,showFavourites} = this.props.store.getState();
+    const {movies} = this.props.store.getState();
+
+    const {list,favourities,showFavourites} = movies;
     const displayMovies = showFavourites ? favourities :list;
     return (
       <div className="App">
