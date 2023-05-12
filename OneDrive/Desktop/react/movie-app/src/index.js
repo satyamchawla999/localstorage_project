@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { legacy_createStore as createStore } from 'redux';import './index.css';
-
+import { legacy_createStore as createStore } from 'redux';
+import './index.css';
 import App from './components/App';
 import movies from './reducers'
 
